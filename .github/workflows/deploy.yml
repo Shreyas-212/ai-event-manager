@@ -22,4 +22,5 @@ jobs:
         run: npm install --global vercel@latest
       
       - name: Deploy to Vercel
+        # We deploy directly without pre-building so Vercel can natively compile the Go backend
         run: vercel deploy --prod --yes --token=${{ secrets.VERCEL_TOKEN }}
